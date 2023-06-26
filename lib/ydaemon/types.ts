@@ -44,7 +44,7 @@ export const defaultVault: Vault = {
   address: '',
   name: '',
   version: '',
-  token: { 
+  token: {
     address: '',
     name: '',
     symbol: ''
@@ -57,9 +57,11 @@ export const defaultVault: Vault = {
   apy: {
     gross_apr: 0,
     net_apy: 0
-  }, 
+  },
   tvl: {
     tvl: 0,
     price: 0
-  }
+  },
+  symbol: '',
+  decimals: 0
 }
