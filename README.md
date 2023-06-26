@@ -23,3 +23,7 @@ curl -v \
   -d '{ }' \
   'http://localhost:3000/api/sync'
 ```
+
+## cron
+uses qstash to keep sync cache
+https://upstash.com

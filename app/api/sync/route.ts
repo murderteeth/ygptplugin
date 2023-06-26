@@ -23,6 +23,7 @@ export async function POST() {
           symbol: ydaemonVault.symbol,
           decimals: ydaemonVault.decimals,
           price: ydaemonVault.tvl.price,
+          updatedAt: new Date()
         },
         create: {
           chainId: chainId,
