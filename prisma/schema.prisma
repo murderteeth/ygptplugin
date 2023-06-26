@@ -1,0 +1,24 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["jsonProtocol"]
+}
+
+datasource db {
+  provider          = "postgresql"
+  url               = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl         = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING") // used for migrations
+}
+
+model Vault {
+  chainId   Int
+  address   String
+  version   String
+  name      String
+  symbol    String
+  decimals  Int
+  price     Float
+  updatedAt DateTime @default(now())
+
+  @@id([chainId, address])
+}
