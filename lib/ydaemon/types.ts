@@ -59,6 +59,7 @@ export const defaultVault: Vault = {
     net_apy: 0
   }, 
   tvl: {
-    tvl: 0
+    tvl: 0,
+    price: 0
   }
 }
