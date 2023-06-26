@@ -2,6 +2,10 @@ import Image from 'next/image'
 import prisma from '../lib/prisma'
 import TimeAgoUseClient from './components/TimeAgoUseClient'
 
+// https://nextjs.org/docs/app/building-your-application/data-fetching/fetching#segment-cache-configuration
+// https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
+export const revalidate = 0
+
 async function getVaults() {
   return await prisma.vault.findMany({
     where: { chainId: 10 }
