@@ -37,3 +37,14 @@ curl -v \
 ## cron
 uses qstash to keep sync cache
 https://upstash.com
+
+schedule a QStash sync job
+```
+curl -v \
+  -H "Authorization: Bearer ********" \
+  -H "Upstash-Forward-key: ********" \
+  -H "Upstash-Cron: */30 * * * *" \
+  -H "Content-type: application/json" \
+  -d '{}' \
+  'https://qstash.upstash.io/v1/publish/https://ygptplugin.vercel.app/api/sync'
+```
