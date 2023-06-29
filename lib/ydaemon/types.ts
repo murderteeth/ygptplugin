@@ -48,7 +48,8 @@ export const defaultVault: Vault = {
   token: {
     address: '',
     name: '',
-    symbol: ''
+    symbol: '',
+    description: ''
   },
   inception: 0,
   details: {
