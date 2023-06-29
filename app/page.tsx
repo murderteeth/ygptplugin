@@ -9,7 +9,8 @@ export const revalidate = 0
 async function getVaults() {
   return await prisma.vault.findMany({
     where: { chain_id: 10 },
-    orderBy: { tvl_in_usd: 'desc' }
+    orderBy: { tvl_in_usd: 'desc' },
+    take: 20
   })
 }
 
@@ -19,7 +20,7 @@ export default async function Home() {
 
     <div className="flex flex-col items-center justify-center gap-4">
       <Image priority={true} src={'/chimp.png'} alt={'ahoy'} width={400} height={400} />
-      <div className="text-4xl">yearn chatgpt plugin</div>
+      <div className="text-4xl">yGptPlugin</div>
       <div>Talk to the Yearn protocol in real-time using ChatGPT</div>
     </div>
 

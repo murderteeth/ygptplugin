@@ -4,7 +4,7 @@ import prisma from '../../../lib/prisma'
 import { NextResponse } from 'next/server'
 
 // const chainIds = [1, 10, 250, 42161]
-const chainIds = [10]
+const chainIds = [1]
 const endpoint = 'https://ydaemon.yearn.finance'
 
 export async function POST() {
