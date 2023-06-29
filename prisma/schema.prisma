@@ -11,14 +11,32 @@ datasource db {
 }
 
 model Vault {
-  chainId   Int
-  address   String
-  version   String
-  name      String
-  symbol    String
-  decimals  Int
-  price     Float
-  updatedAt DateTime @default(now())
+  chain_id                   Int
+  address                    String
+  version                    String
+  name                       String
+  token_symbol               String
+  tvl_in_usd                 Float
+  net_annual_percent_yield   Float
+  gross_annual_percent_yield Float
+  deposit_token_name         String
+  deposit_token_symbol       String
+  deposit_token_description  String
+  deposit_token_price        Float
+  strategies                 Strategy[]
+  updated_at                 DateTime   @default(now())
 
-  @@id([chainId, address])
+  @@id([chain_id, address])
+}
+
+model Strategy {
+  chain_id                Int
+  address                 String
+  name                    String
+  description             String
+  net_annual_percent_rate Float
+  withdrawal_queue_index  Int
+  vault                   Vault  @relation(fields: [chain_id, address], references: [chain_id, address])
+
+  @@id([chain_id, address])
 }

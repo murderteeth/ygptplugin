@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "prisma generate && prisma db push && next build",
     "start": "next start",
+    "rm-image-cache": "rm -R .next/cache/images",
     "lint": "next lint",
     "pullenv": "vercel env pull .env",
     "migrate": "prisma format && prisma generate && prisma db push"

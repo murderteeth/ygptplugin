@@ -8,7 +8,8 @@ export const revalidate = 0
 
 async function getVaults() {
   return await prisma.vault.findMany({
-    where: { chainId: 10 }
+    where: { chain_id: 10 },
+    orderBy: { tvl_in_usd: 'desc' }
   })
 }
 
@@ -24,7 +25,7 @@ export default async function Home() {
 
     <div>
       {vaults.map((vault, index) => <div key={index}>
-        <div>{<TimeAgoUseClient date={vault.updatedAt} />} - {vault.symbol} - {vault.price}</div>
+        <div>{<TimeAgoUseClient date={vault.updated_at} />} - {vault.token_symbol} - {vault.tvl_in_usd}</div>
       </div>)}
     </div>
 

@@ -7,7 +7,8 @@ export interface Vault {
   token: {
     address: string,
     name: string,
-    symbol: string
+    symbol: string,
+    description: string
   },
   inception: number,
   details: {
