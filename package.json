@@ -9,7 +9,8 @@
     "rm-image-cache": "rm -R .next/cache/images",
     "lint": "next lint",
     "pullenv": "vercel env pull .env",
-    "migrate": "prisma format && prisma generate && prisma db push"
+    "migrate": "prisma format && prisma generate && prisma db push",
+    "generate-key": "node -e \"console.log(require('crypto').randomBytes(32).toString('hex'))\""
   },
   "dependencies": {
     "@prisma/client": "^4.16.1",
