@@ -1,11 +1,14 @@
-# yearn-chatgpt-plugin
+# ygptplugin
+
 
 ## dev
+for now.. to run this project locally you either need to be a memeber of the murderteeth's vercel team or you can create your own vercel project and link to that. If you create your own vercel project, use the vercel dashboard to add a postgres database to your project. The following works in either case:
 ```bash
 yarn add vercel -g
 vercel link
 yarn
 yarn pullenv
+yarn migrate
 yarn dev
 ```
 
@@ -15,7 +18,8 @@ yarn dev
 yarn migrate
 ```
 
-## manual plugin testing
+## local plugin testing
+Go to ChatGPT's plugin store, click `Develop your own plugin`, enter `localhost:3000`.
 
 
 ## manual endpoint testing 
@@ -35,7 +39,7 @@ curl -v \
 ```
 
 ## cron
-uses qstash to keep sync cache
+uses qstash to keep data synced
 https://upstash.com
 
 schedule a QStash sync job
