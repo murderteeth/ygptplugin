@@ -1,0 +1,37 @@
+openapi: 3.0.1
+info:
+  title: yGptPlugin
+  version: 1.0.0
+paths:
+  '/api/ai/highapy':
+    get:
+      summary: Get yearn vaults with high APY (Annual Percentage Yield)
+      operationId: getHighApyVaults
+      parameters: []
+      responses:
+        '200':
+          description: Vaults with the highest APY
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  vaults:
+                    type: array
+                    description: A list of Yearn vaults with highest APY
+                    items:
+                      type: object
+                      description: A Yearn vault
+                      properties:
+                        address:
+                          type: string
+                        token_symbol:
+                          type: string
+                        name:
+                          type: string
+                        net_annual_percent_yield:
+                          type: number
+                        gross_annual_percent_yield:
+                          type: number
+                        url:
+                          type: string

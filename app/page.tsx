@@ -8,7 +8,7 @@ export const revalidate = 0
 
 async function getVaults() {
   return await prisma.vault.findMany({
-    where: { chain_id: 10 },
+    where: { chain_id: 1 },
     orderBy: { tvl_in_usd: 'desc' },
     take: 20
   })

@@ -15,6 +15,16 @@ yarn dev
 yarn migrate
 ```
 
+## manual plugin testing
+
+
+## manual endpoint testing 
+```bash
+curl -v \
+  -H "Content-type: application/json" \
+  'http://localhost:3000/api/ai/highapy'
+```
+
 ## sync
 ```bash
 curl -v \
