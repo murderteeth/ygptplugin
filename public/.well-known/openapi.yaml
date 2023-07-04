@@ -3,14 +3,19 @@ info:
   title: yGptPlugin
   version: 1.0.0
 paths:
-  '/api/ai/highapy':
+  '/api/ai/sql':
     get:
-      summary: Get yearn vaults with high APY (Annual Percentage Yield)
-      operationId: getHighApyVaults
-      parameters: []
+      summary: Use natural language to query a database containing data on Yearn vaults and strategies
+      operationId: sql
+      parameters:
+        - in: query
+          name: languageQuery
+          schema:
+            type: string
+          description: A natural language query. 
       responses:
         '200':
-          description: Vaults with the highest APY
+          description: Vault and strategy data
           content:
             application/json:
               schema:
@@ -18,12 +23,14 @@ paths:
                 properties:
                   vaults:
                     type: array
-                    description: A list of Yearn vaults with highest APY
+                    description: Array of Yearn vaults and their strategies
                     items:
                       type: object
                       description: A Yearn vault
                       properties:
                         address:
+                          type: string
+                        version:
                           type: string
                         token_symbol:
                           type: string
@@ -35,3 +42,19 @@ paths:
                           type: number
                         url:
                           type: string
+                        strategies:
+                          type: array
+                          description: Array of strategies used by a Yearn vault
+                          properties:
+                            address:
+                              type: string
+                            name:
+                              type: string
+                            description:
+                              type: string
+                            total_debt_usd:
+                              type: number
+                            net_annual_percent_rate:
+                              type: number
+                            last_report:
+                              type: date

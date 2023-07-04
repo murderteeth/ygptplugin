@@ -22,24 +22,23 @@ export interface Vault {
   tvl: {
     tvl: number,
     price: number
+  },
+  strategies: Strategy[]
+}
+
+export interface Strategy {
+  address: string,
+  name: string,
+  description: string,
+  details: {
+    totalDebt: string,
+    totalLoss: string,
+    totalGain: string,
+    lastReport: string,
+    apr: number,
+    withdrawalQueuePosition: number
   }
 }
-
-export interface FlatVault {
-  address: string;
-  name: string;
-  version: string;
-  token_address: string;
-  token_name: string;
-  token_symbol: string;
-  inception: number;
-  details_management_fee: number;
-  details_performance_fee: number;
-  apy_gross_apr: number;
-  apy_net_apy: number;
-  tvl_tvl: number;
-}
-
 
 export const defaultVault: Vault = {
   address: '',
@@ -65,5 +64,6 @@ export const defaultVault: Vault = {
     price: 0
   },
   symbol: '',
-  decimals: 0
+  decimals: 0,
+  strategies: []
 }

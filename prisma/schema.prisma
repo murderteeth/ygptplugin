@@ -1,6 +1,6 @@
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["jsonProtocol"]
+  previewFeatures = ["jsonProtocol", "fullTextSearch"]
 }
 
 datasource db {
@@ -34,9 +34,15 @@ model Strategy {
   address                 String
   name                    String
   description             String
+  total_debt_usd          Float
+  total_loss_usd          Float
+  total_gain_usd          Float
+  last_report             DateTime
   net_annual_percent_rate Float
   withdrawal_queue_index  Int
-  vault                   Vault  @relation(fields: [chain_id, address], references: [chain_id, address])
+  vault_chain_id          Int
+  vault_address           String
+  vault                   Vault    @relation(fields: [vault_chain_id, vault_address], references: [chain_id, address])
 
   @@id([chain_id, address])
 }
