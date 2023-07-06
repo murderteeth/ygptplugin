@@ -1,8 +1,8 @@
 # ygptplugin
-
+talk to the Yearn protocol in real-time using ChatGPT
 
 ## dev
-for now.. to run this project locally you either need to be a memeber of the murderteeth's vercel team or you can create your own vercel project and link to that. If you create your own vercel project, use the vercel dashboard to add a postgres database to your project. The following works in either case:
+for now.. to run this project locally you either need to be a memeber of murderteeth's vercel team or you can create your own vercel project and link to that. If you create your own vercel project, use the vercel dashboard to add a postgres database to your project. The following works in either case:
 ```bash
 yarn add vercel -g
 vercel link
@@ -19,14 +19,15 @@ yarn migrate
 ```
 
 ## local plugin testing
-Go to ChatGPT's plugin store, click `Develop your own plugin`, enter `localhost:3000`.
+- start your local server, `yarn dev`
+- go to ChatGPT's plugin store, click `Develop your own plugin`, enter `localhost:3000`.
 
 
 ## manual endpoint testing 
 ```bash
 curl -v \
   -H "Content-type: application/json" \
-  'http://localhost:3000/api/ai/highapy'
+  'http://localhost:3000/api/ai/sql?languageQuery=vaults%20with%20high%20apy'
 ```
 
 ## sync
