@@ -1,6 +1,14 @@
 # ygptplugin
 talk to the Yearn protocol in real-time using ChatGPT
 
+```
+sup! if you have developer access to OpenAI, you can now install yGptPlugin as an Unverified Plugin from the plugin store. when prompted, use this domain:
+
+ygptplugin.vercel.app
+
+wip. enjoy 😸
+```
+
 ## dev
 for now.. to run this project locally you either need to be a memeber of murderteeth's vercel team or you can create your own vercel project and link to that. If you create your own vercel project, use the vercel dashboard to add a postgres database to your project. The following works in either case:
 ```bash
