@@ -2,7 +2,9 @@
 talk to the Yearn protocol in real-time using ChatGPT
 
 ```
-sup! if you have developer access to OpenAI, you can now install yGptPlugin as an Unverified Plugin from the plugin store. when prompted, use this domain:
+sup! if you have developer access to OpenAI, you can now
+install yGptPlugin as an Unverified Plugin from the
+plugin store. when prompted, use this domain:
 
 ygptplugin.vercel.app
 
